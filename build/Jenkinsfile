@@ -23,7 +23,7 @@ node('build-slave') {
 
                 stage('DockerBuild') {
                     sh('chmod 777 build/build.sh')
-                    sh("build/build.sh ${build_tag} uci_api ${env.NODE_NAME} ${hub_org}")
+                    sh("build/build.sh ${build_tag} uci ${env.NODE_NAME} ${hub_org}")
                 }
                 stage('ArchiveArtifacts') {
                     archiveArtifacts "metadata.json"
